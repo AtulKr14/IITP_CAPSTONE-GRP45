@@ -30,7 +30,7 @@ export default function Results() {
     const latest = history[history.length - 1];
     setLatestQuiz(latest);
     setPreviousQuizzes(history.slice(0, -1));
-  }, [user, setLocation]);
+  }, []);
 
   if (!user || !latestQuiz) {
     return null;

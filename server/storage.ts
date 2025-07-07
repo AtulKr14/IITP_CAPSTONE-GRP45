@@ -79,7 +79,8 @@ export class MemStorage implements IStorage {
     const id = this.currentResponseId++;
     const response: QuestionResponse = { 
       ...insertResponse, 
-      id 
+      id,
+      userAnswer: insertResponse.userAnswer || null
     };
     this.questionResponses.set(id, response);
     return response;

@@ -41,7 +41,7 @@ export default function Dashboard() {
     
     setStats(userStats);
     setRecentQuizzes(history.slice(-3).reverse()); // Last 3 quizzes
-  }, [user, setLocation]);
+  }, []);
 
   if (!user) {
     return null;

@@ -24,8 +24,11 @@ export default function Report() {
       return;
     }
 
-    setLatestQuiz(history[history.length - 1]);
-  }, [user, setLocation]);
+    const latest = history[history.length - 1];
+    if (!latestQuiz || latestQuiz.completedAt !== latest.completedAt) {
+      setLatestQuiz(latest);
+    }
+  }, [user, setLocation, latestQuiz]);
 
   if (!user || !latestQuiz) {
     return null;
